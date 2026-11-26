@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A&amp;I — Konsultan Digital, Website, QR Seru, Cloud 365 &amp; Peta Patok OSS (.shp)</title>
+  <meta name="description" content="Company Profile A&I: Konsultan Teknis, Jasa Bangun Awal/Ulang/Revisi Website, QR Lucky Spin, Ulasan & GMaps, Cloud & Microsoft 365, serta Ukur Tanah Patok OSS (.shp)." />
+
+  <!-- Favicon Logo A&I (Navy Blue Serif elegan dengan aksen Gold tipis & sudut membulat) -->
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230F294A'/%3E%3Cstop offset='100%25' stop-color='%231B457A'/%3E%3C/linearGradient%3E%3ClinearGradient id='gold' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FDE68A'/%3E%3Cstop offset='100%25' stop-color='%23D97706'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='url(%23bg)' stroke='url(%23gold)' stroke-width='3'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia, serif' font-weight='bold' font-size='25' fill='%23FFFFFF' stroke='url(%23gold)' stroke-width='0.6' letter-spacing='-1'%3EA%26amp;I%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Fredoka (bulat & ceria untuk judul) + Plus Jakarta Sans (bersih & nyaman dibaca) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fredoka', 'cursive', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            aiNavy: '#0F294A',
+            aiBlue: '#1D4ED8',
+            aiGold: '#F59E0B',
+            aiMint: '#10B981',
+            aiCream: '#FFFDF7',
+            aiCoral: '#FB7185',
+          },
+          boxShadow: {
+            'pop': '0 10px 0 -2px rgba(15, 41, 74, 0.12), 0 20px 25px -5px rgba(15, 41, 74, 0.08)',
+            'pop-hover': '0 14px 0 -2px rgba(15, 41, 74, 0.18), 0 25px 30px -5px rgba(15, 41, 74, 0.14)',
+            'btn-3d': '0 5px 0 #09192E',
+            'btn-gold': '0 5px 0 #B45309',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Keyframes untuk Animasi Lucu & Hidup */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(8px) rotate(-2.5deg); }
+    }
+    @keyframes waveHand {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(22deg); }
+      40% { transform: rotate(-10deg); }
+      60% { transform: rotate(20deg); }
+      80% { transform: rotate(-6deg); }
+    }
+    @keyframes blinkEyes {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+    @keyframes jellyBounce {
+      0% { transform: scale(1, 1); }
+      30% { transform: scale(1.06, 0.94); }
+      50% { transform: scale(0.96, 1.04); }
+      70% { transform: scale(1.02, 0.98); }
+      100% { transform: scale(1, 1); }
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(0.85); opacity: 0.9; }
+      70% { transform: scale(1.8); opacity: 0; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -24; }
+    }
+
+    .animate-float { animation: floatSlow 4.2s ease-in-out infinite; }
+    .animate-float-reverse { animation: floatReverse 4.8s ease-in-out infinite; }
+    .robot-arm-wave {
+      transform-origin: 185px 158px;
+      animation: waveHand 2.6s ease-in-out infinite;
+    }
+    .robot-eye {
+      transform-origin: center;
+      transform-box: fill-box;
+      animation: blinkEyes 4.5s infinite;
+    }
+    .card-bouncy {
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease;
+    }
+    .card-bouncy:hover {
+      transform: translateY(-8px) rotate(-0.6deg);
+    }
+    .btn-bouncy {
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
+    }
+    .btn-bouncy:hover {
+      animation: jellyBounce 0.55s ease;
+    }
+    .btn-bouncy:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #09192E !important;
+    }
+    .patok-pulse {
+      transform-origin: center;
+      transform-box: fill-box;
+      animation: pulseRing 2s infinite;
+    }
+    .boundary-line {
+      stroke-dasharray: 6 6;
+      animation: dashFlow 1.2s linear infinite;
+    }
+
+    /* Background polkadot lembut */
+    .bg-polka {
+      background-color: #FFFDF7;
+      background-image: radial-gradient(#CBD5E1 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+    }
+
+    /* Gaya Logo A&I 3D Navy + Gold */
+    .logo-ai-emblem {
+      background: linear-gradient(145deg, #1E4E8C 0%, #0F294A 65%, #091A32 100%);
+      border: 2px solid #F59E0B;
+      box-shadow: inset 0 1px 2px rgba(253, 230, 138, 0.6), 0 4px 10px rgba(15, 41, 74, 0.25);
+    }
+    .logo-ai-text {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: linear-gradient(180deg, #FFFFFF 0%, #DBEAFE 55%, #93C5FD 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 0 #D97706);
+    }
+  </style>
+</head>
+<body class="bg-polka text-slate-800 antialiased selection:bg-amber-200 selection:text-aiNavy overflow-x-hidden">
+
+  <!-- Canvas Confetti Melayang (Non-intrusive) -->
+  <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+  <!-- ================= NAVBAR STICKY ================= -->
+  <header class="sticky top-0 z-40 px-3 sm:px-6 pt-3">
+    <nav class="max-w-6xl mx-auto bg-white/90 backdrop-blur-md border-2 border-aiNavy/15 rounded-3xl px-4 sm:px-6 py-3 shadow-lg flex items-center justify-between gap-4">
+      <!-- Brand Logo A&I -->
+      <a href="#beranda" class="flex items-center gap-3 group focus:outline-none">
+        <div class="logo-ai-emblem w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
+          <span class="logo-ai-text font-bold text-xl sm:text-2xl tracking-tighter select-none">A&amp;I</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display font-bold text-lg sm:text-xl text-aiNavy flex items-center gap-1.5">
+            A&amp;I Studio
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-aiMint animate-ping"></span>
+          </div>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-500">Digital, Cloud &amp; Spasial OSS</p>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Desktop -->
+      <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-700">
+        <a href="#layanan" class="hover:text-aiBlue transition-colors py-1">Layanan Seru</a>
+        <a href="#demo-interaktif" class="hover:text-aiBlue transition-colors py-1 flex items-center gap-1">
+          <span>Coba Demo</span>
+          <span class="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-300">LIVE</span>
+        </a>
+        <a href="#alur-kerja" class="hover:text-aiBlue transition-colors py-1">Alur Kerja</a>
+        <a href="#keunggulan" class="hover:text-aiBlue transition-colors py-1">Kenapa A&amp;I?</a>
+      </div>
+
+      <!-- Tombol CTA & Mobile Menu Toggle -->
+      <div class="flex items-center gap-2">
+        <a href="#kontak" onclick="fireConfetti(event)" class="btn-bouncy bg-aiGold hover:bg-amber-400 text-aiNavy font-display font-bold text-sm sm:text-base px-4 sm:px-5 py-2.5 rounded-2xl border-2 border-aiNavy shadow-btn-gold flex items-center gap-2">
+          <span>Ngobrol Yuk!</span>
+          <span class="text-base">💬</span>
+        </a>
+        <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2.5 rounded-2xl border-2 border-aiNavy/20 bg-slate-50 text-aiNavy hover:bg-amber-50">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Dropdown Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden max-w-6xl mx-auto mt-2 bg-white border-2 border-aiNavy/15 rounded-3xl p-4 shadow-xl">
+      <div class="flex flex-col gap-2 font-bold text-aiNavy">
+        <a href="#layanan" class="mobile-link px-4 py-2.5 rounded-2xl hover:bg-amber-50">🚀 Layanan Lengkap</a>
+        <a href="#demo-interaktif" class="mobile-link px-4 py-2.5 rounded-2xl hover:bg-amber-50">🎡 Coba Demo Spin &amp; Peta Patok</a>
+        <a href="#alur-kerja" class="mobile-link px-4 py-2.5 rounded-2xl hover:bg-amber-50">🗺️ 4 Langkah Alur Kerja</a>
+        <a href="#keunggulan" class="mobile-link px-4 py-2.5 rounded-2xl hover:bg-amber-50">⭐ Kenapa Memilih A&amp;I?</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="beranda" class="relative pt-8 pb-16 sm:pt-14 sm:pb-24 px-4 sm:px-6 overflow-hidden">
+    <!-- Dekorasi Gelembung Lucu di Latar -->
+    <div class="hidden lg:block absolute top-14 left-10 w-16 h-16 rounded-full bg-amber-300/40 blur-sm animate-float"></div>
+    <div class="hidden lg:block absolute bottom-12 right-12 w-24 h-24 rounded-full bg-emerald-300/35 blur-sm animate-float-reverse"></div>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <!-- Kolom Kiri: Copywriting Ramah & CTA -->
+      <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+        <div class="inline-flex items-center gap-2 bg-white border-2 border-aiNavy/15 px-4 py-2 rounded-full shadow-sm animate-float">
+          <span class="text-lg">👋</span>
+          <span class="text-xs sm:text-sm font-bold text-aiNavy">Halo! Selamat datang di <span class="text-aiBlue">A&amp;I Consulting &amp; Digital</span></span>
+        </div>
+
+        <h1 class="font-display font-bold text-3xl sm:text-5xl lg:text-[52px] text-aiNavy leading-[1.14] tracking-tight">
+          Solusi Digital, QR Seru, Cloud, hingga
+          <span class="relative inline-block px-2">
+            <span class="relative z-10 text-aiBlue">Peta Patok OSS</span>
+            <span class="absolute bottom-1 left-0 w-full h-3.5 bg-amber-300/80 -rotate-1 rounded-lg -z-0"></span>
+          </span>
+          — Semua Beres Tanpa Pusing!
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-600 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          Dari <strong>konsultansi bisnis</strong>, <strong>bangun awal / ulang / revisi website</strong>, bikin <strong>QR Lucky Spin &amp; Google Maps</strong>, setup <strong>Cloud &amp; Microsoft 365</strong>, sampai <strong>ukur tanah berpatok tiap sudut via Google Earth (.shp)</strong> — kami kerjakan dengan rapi, cepat, dan menyenangkan!
+        </p>
+
+        <!-- Tombol Aksi Utama -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+          <a href="#kontak" onclick="fireConfetti(event)" class="btn-bouncy w-full sm:w-auto bg-aiNavy hover:bg-blue-900 text-white font-display font-bold text-base sm:text-lg px-7 py-4 rounded-2xl border-2 border-aiNavy shadow-btn-3d flex items-center justify-center gap-2.5">
+            <span>Konsultasi Gratis Sekarang</span>
+            <span class="text-xl">🚀</span>
+          </a>
+          <a href="#demo-interaktif" class="btn-bouncy w-full sm:w-auto bg-white hover:bg-emerald-50 text-aiNavy font-display font-bold text-base sm:text-lg px-6 py-4 rounded-2xl border-2 border-aiNavy shadow-pop flex items-center justify-center gap-2">
+            <span>Mainkan Mini Demo</span>
+            <span class="text-xl">🎡</span>
+          </a>
+        </div>
+
+        <!-- Mini Pill Badges -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-2 text-xs font-bold text-slate-700">
+          <span class="bg-blue-50 border border-blue-200 px-3 py-1.5 rounded-xl">💻 Web Baru &amp; Revamp</span>
+          <span class="bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl">🎯 QR Lucky Spin &amp; GMaps</span>
+          <span class="bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl">🗺️ Shapefile (.shp) OSS</span>
+          <span class="bg-purple-50 border border-purple-200 px-3 py-1.5 rounded-xl">☁️ Microsoft 365 &amp; Cloud</span>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Maskot Asisten Pintar A&I (SVG Interaktif yang Melambai & Mengikuti Kursor) -->
+      <div class="lg:col-span-5 flex flex-col items-center">
+        <div id="mascot-card" class="relative w-full max-w-sm bg-gradient-to-b from-blue-50 via-white to-amber-50/70 border-4 border-aiNavy rounded-[36px] p-6 shadow-pop">
+          <!-- Speech Bubble Interaktif -->
+          <div id="mascot-speech" class="bg-white border-2 border-aiNavy rounded-2xl px-4 py-2.5 text-center shadow-md mb-2 transition-all duration-300">
+            <p class="font-display font-semibold text-sm sm:text-base text-aiNavy">
+              "Klik aku atau geser kursor! Siap bantu beresin proyekmu ✨"
+            </p>
+          </div>
+
+          <!-- SVG Maskot Robot Asisten A&I -->
+          <div class="flex justify-center cursor-pointer select-none" onclick="pokeMascot(event)" title="Klik maskot A&I!">
+            <svg id="ai-mascot-svg" viewBox="0 0 260 250" class="w-64 h-64 sm:w-72 sm:h-72 overflow-visible">
+              <!-- Bayangan Bawah -->
+              <ellipse cx="130" cy="236" rx="68" ry="11" fill="#0F294A" opacity="0.14" />
+
+              <!-- Antena Atas -->
+              <line x1="130" y1="36" x2="130" y2="16" stroke="#0F294A" stroke-width="5" stroke-linecap="round" />
+              <circle cx="130" cy="13" r="8" fill="#F59E0B" stroke="#0F294A" stroke-width="3.5" />
+              <circle cx="127" cy="10" r="2.5" fill="#FFFBEB" />
+
+              <!-- Telinga Kiri & Kanan -->
+              <rect x="44" y="72" width="16" height="34" rx="8" fill="#10B981" stroke="#0F294A" stroke-width="4" />
+              <rect x="200" y="72" width="16" height="34" rx="8" fill="#10B981" stroke="#0F294A" stroke-width="4" />
+
+              <!-- Kepala Robot -->
+              <rect x="56" y="36" width="148" height="102" rx="34" fill="#FFFFFF" stroke="#0F294A" stroke-width="4.5" />
+              <!-- Layar Wajah Navy -->
+              <rect x="70" y="50" width="120" height="74" rx="22" fill="#0F294A" />
+
+              <!-- Mata Kiri & Kanan (Bisa mengikuti kursor!) -->
+              <g id="mascot-eyes">
+                <g class="robot-eye">
+                  <circle cx="102" cy="83" r="13" fill="#38BDF8" />
+                  <circle cx="106" cy="79" r="4.5" fill="#FFFFFF" />
+                </g>
+                <g class="robot-eye">
+                  <circle cx="158" cy="83" r="13" fill="#38BDF8" />
+                  <circle cx="162" cy="79" r="4.5" fill="#FFFFFF" />
+                </g>
+              </g>
+
+              <!-- Pipi Merona -->
+              <ellipse cx="86" cy="101" rx="7" ry="4" fill="#FB7185" opacity="0.85" />
+              <ellipse cx="174" cy="101" rx="7" ry="4" fill="#FB7185" opacity="0.85" />
+
+              <!-- Mulut Senyum -->
+              <path id="mascot-mouth" d="M 116 102 Q 130 115 144 102" fill="none" stroke="#FBBF24" stroke-width="4.5" stroke-linecap="round" />
+
+              <!-- Badan Robot dengan Emblem Logo A&I -->
+              <rect x="76" y="144" width="108" height="76" rx="28" fill="#1D4ED8" stroke="#0F294A" stroke-width="4.5" />
+              <!-- Panel Dada Logo A&I -->
+              <rect x="94" y="156" width="72" height="44" rx="14" fill="#0F294A" stroke="#F59E0B" stroke-width="3" />
+              <text x="130" y="185" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="22" fill="#FFFFFF" stroke="#F59E0B" stroke-width="0.5">A&amp;I</text>
+
+              <!-- Tangan Kiri (Pegang Pin Peta / QR) -->
+              <path d="M 76 164 Q 42 175 48 198" fill="none" stroke="#0F294A" stroke-width="12" stroke-linecap="round" />
+              <path d="M 76 164 Q 42 175 48 198" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+              <circle cx="48" cy="200" r="10" fill="#F59E0B" stroke="#0F294A" stroke-width="3.5" />
+
+              <!-- Tangan Kanan Melambai Lucu -->
+              <g class="robot-arm-wave">
+                <path d="M 184 162 Q 222 145 218 118" fill="none" stroke="#0F294A" stroke-width="12" stroke-linecap="round" />
+                <path d="M 184 162 Q 222 145 218 118" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+                <circle cx="218" cy="115" r="11" fill="#F59E0B" stroke="#0F294A" stroke-width="3.5" />
+              </g>
+
+              <!-- Kaki Kecil Lucu -->
+              <rect x="94" y="218" width="24" height="14" rx="7" fill="#0F294A" />
+              <rect x="142" y="218" width="24" height="14" rx="7" fill="#0F294A" />
+            </svg>
+          </div>
+
+          <!-- Badge Floating di Sudut Kartu Maskot -->
+          <div class="absolute -bottom-4 -left-3 bg-aiMint text-white font-display font-bold text-xs px-3.5 py-2 rounded-2xl border-2 border-aiNavy shadow-md animate-float-reverse">
+            📍 Patok OSS (.shp) Ready!
+          </div>
+          <div class="absolute -top-4 -right-3 bg-aiGold text-aiNavy font-display font-bold text-xs px-3.5 py-2 rounded-2xl border-2 border-aiNavy shadow-md animate-float">
+            ☁️ Cloud &amp; M365 Pro
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LAYANAN UTAMA (5 KARTU INTERAKTIF) ================= -->
+  <section id="layanan" class="py-16 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <span class="inline-block bg-blue-100 text-aiNavy font-display font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full border-2 border-aiNavy/20">
+          ✨ Layanan Andalan A&amp;I
+        </span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-aiNavy">
+          Satu Pintu untuk Digital, Cloud &amp; Pemetaan Lahan
+        </h2>
+        <p class="text-slate-600 font-medium text-sm sm:text-base">
+          Pilih layanan yang kamu butuhkan — semuanya dikerjakan dengan standar rapi, komunikatif, dan hasil siap pakai!
+        </p>
+      </div>
+
+      <!-- Grid 5 Kartu Layanan Lucu -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- KARTU 1: Konsultansi Teknis & Alur Kerja -->
+        <article class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 shadow-pop flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-sky-100 border-2 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+                🧠
+              </div>
+              <span class="bg-sky-50 text-sky-800 border border-sky-200 text-xs font-extrabold px-3 py-1 rounded-full">01 • Konsultan</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-aiNavy mb-2">
+              Konsultansi Teknis &amp; Alur Kerja Bisnis
+            </h3>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Bingung mulai digitalisasi dari mana? Kami bantu bedah masalah operasional, rancang alur kerja (<em>workflow</em>) efisien, dan pilihkan solusi paling tepat guna.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm font-semibold text-slate-700 mb-5">
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Analisis kebutuhan &amp; problem solving sistem</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Perancangan SOP digital &amp; otomatisasi ringan</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Pendampingan teknis implementasi proyek</li>
+            </ul>
+          </div>
+          <div class="pt-3 border-t border-dashed border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-aiNavy bg-slate-100 px-3 py-1.5 rounded-xl">📦 Blueprint &amp; Solusi</span>
+            <button onclick="selectServiceAndScroll('Konsultansi Teknis & Alur Kerja')" class="text-xs font-extrabold text-aiBlue hover:underline">Pilih Layanan →</button>
+          </div>
+        </article>
+
+        <!-- KARTU 2: Jasa Website Lengkap -->
+        <article class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 shadow-pop flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-indigo-100 border-2 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+                💻
+              </div>
+              <span class="bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-extrabold px-3 py-1 rounded-full">02 • Web Engineering</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-aiNavy mb-2">
+              Bangun Awal, Bangun Ulang &amp; Revisi Website
+            </h3>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Mulai dari bikin website baru dari nol, perombakan total (<em>revamp</em>) website lama yang kaku, hingga revisi fitur &amp; pemeliharaan rutin.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm font-semibold text-slate-700 mb-5">
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> <strong>Bangun Awal:</strong> Desain modern, responsif &amp; deployment</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> <strong>Bangun Ulang:</strong> Upgrade tampilan, UX &amp; kecepatan</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> <strong>Revisi &amp; Maintenance:</strong> Perbaikan bug &amp; update konten</li>
+            </ul>
+          </div>
+          <div class="pt-3 border-t border-dashed border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-aiNavy bg-slate-100 px-3 py-1.5 rounded-xl">📦 Web Live + Akses Penuh</span>
+            <button onclick="selectServiceAndScroll('Jasa Website (Baru / Revamp / Revisi)')" class="text-xs font-extrabold text-aiBlue hover:underline">Pilih Layanan →</button>
+          </div>
+        </article>
+
+        <!-- KARTU 3: Smart QR & Barcode Solutions -->
+        <article class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 shadow-pop flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+                🎡
+              </div>
+              <span class="bg-amber-50 text-amber-800 border border-amber-300 text-xs font-extrabold px-3 py-1 rounded-full">03 • Smart QR</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-aiNavy mb-2">
+              QR / Barcode Lucky Spin, Ulasan &amp; Google Maps
+            </h3>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Bikin promosi toko &amp; event makin seru! Pelanggan tinggal scan QR untuk main <em>Lucky Spin</em> hadiah, kasih ulasan bintang 5, atau langsung navigasi ke lokasi.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm font-semibold text-slate-700 mb-5">
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> QR Lucky Spin &amp; undian promo event interaktif</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> QR langsung ke halaman Ulasan / Review bisnis</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> QR titik lokasi akurat Google Maps siap cetak</li>
+            </ul>
+          </div>
+          <div class="pt-3 border-t border-dashed border-slate-200 flex items-center justify-between">
+            <a href="#demo-interaktif" onclick="switchDemoTab('spin')" class="text-xs font-bold text-amber-900 bg-amber-200 hover:bg-amber-300 px-3 py-1.5 rounded-xl transition-colors">🎯 Coba Spin Mini</a>
+            <button onclick="selectServiceAndScroll('QR Lucky Spin, Ulasan & Google Maps')" class="text-xs font-extrabold text-aiBlue hover:underline">Pilih Layanan →</button>
+          </div>
+        </article>
+
+        <!-- KARTU 4: Jasa Ukur Tanah & Pemetaan Batas Lahan OSS (.shp) -->
+        <article class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 shadow-pop flex flex-col justify-between lg:col-span-2">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+            <div class="md:col-span-8">
+              <div class="flex items-center justify-between md:justify-start gap-3 mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 border-2 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+                  📍
+                </div>
+                <span class="bg-emerald-50 text-emerald-800 border border-emerald-300 text-xs font-extrabold px-3 py-1 rounded-full">04 • Spasial &amp; Perizinan OSS</span>
+              </div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-aiNavy mb-2">
+                Ukur Tanah &amp; Pemetaan Batas Lahan OSS (.shp)
+              </h3>
+              <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                Butuh file peta poligon lahan untuk pengajuan OSS? Kami bantu ukur dan ploting batas tanah menggunakan <strong>Google Earth</strong> lengkap dengan penandaan <strong>patok di setiap titik sudut/garis batas</strong>, lalu dikonversi ke format <strong>Shapefile (.shp)</strong> siap unggah!
+              </p>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm font-semibold text-slate-700">
+                <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Digitasi batas lahan presisi via Google Earth</li>
+                <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Penandaan patok di setiap sudut garis batas</li>
+                <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Output paket lengkap (.shp, .shx, .dbf, .prj)</li>
+                <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Siap untuk kelengkapan administrasi OSS</li>
+              </ul>
+            </div>
+
+            <!-- Mini Ilustrasi SVG Peta Patok Menyala di dalam Kartu -->
+            <div class="md:col-span-4 bg-emerald-950 rounded-2xl p-3 border-2 border-aiNavy text-center relative overflow-hidden">
+              <svg viewBox="0 0 200 150" class="w-full h-32 mx-auto">
+                <!-- Grid satelit -->
+                <rect width="200" height="150" rx="10" fill="#064E3B" />
+                <path d="M0 30 H200 M0 75 H200 M0 120 H200 M40 0 V150 M100 0 V150 M160 0 V150" stroke="#10B981" stroke-opacity="0.2" stroke-width="1" />
+                <!-- Poligon Bidang Tanah -->
+                <polygon points="45,35 152,28 168,112 58,122 34,78" fill="#34D399" fill-opacity="0.25" stroke="#FBBF24" stroke-width="2.5" class="boundary-line" />
+                <!-- 5 Patok Sudut Menyala -->
+                <g>
+                  <circle cx="45" cy="35" r="7" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="45" cy="35" r="4.5" fill="#FBBF24" stroke="#0F294A" stroke-width="1.5" />
+                  <circle cx="152" cy="28" r="7" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="152" cy="28" r="4.5" fill="#FBBF24" stroke="#0F294A" stroke-width="1.5" />
+                  <circle cx="168" cy="112" r="7" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="168" cy="112" r="4.5" fill="#FBBF24" stroke="#0F294A" stroke-width="1.5" />
+                  <circle cx="58" cy="122" r="7" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="58" cy="122" r="4.5" fill="#FBBF24" stroke="#0F294A" stroke-width="1.5" />
+                  <circle cx="34" cy="78" r="7" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="34" cy="78" r="4.5" fill="#FBBF24" stroke="#0F294A" stroke-width="1.5" />
+                </g>
+                <text x="100" y="79" text-anchor="middle" fill="#ECFDF5" font-size="10" font-weight="bold" font-family="sans-serif">AREA PATOK .SHP</text>
+              </svg>
+              <a href="#demo-interaktif" onclick="switchDemoTab('peta')" class="mt-2 inline-block w-full bg-aiMint hover:bg-emerald-400 text-aiNavy font-display font-bold text-xs py-1.5 rounded-xl border border-aiNavy transition-colors">
+                Klik Titik Patok Interaktif →
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-dashed border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-aiNavy bg-slate-100 px-3 py-1.5 rounded-xl">📦 Paket File Shapefile (.shp) OSS</span>
+            <button onclick="selectServiceAndScroll('Ukur Tanah & Peta Batas Lahan OSS (.shp)')" class="text-xs font-extrabold text-aiBlue hover:underline">Pilih Layanan →</button>
+          </div>
+        </article>
+
+        <!-- KARTU 5: Solusi Cloud & Microsoft 365 -->
+        <article class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 shadow-pop flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-purple-100 border-2 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+                ☁️
+              </div>
+              <span class="bg-purple-50 text-purple-800 border border-purple-200 text-xs font-extrabold px-3 py-1 rounded-full">05 • Cloud &amp; M365</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-aiNavy mb-2">
+              Solusi Cloud &amp; Microsoft 365
+            </h3>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+              Tingkatkan kredibilitas perusahaan dengan email domain resmi dan ruang kerja <em>cloud</em> yang rapi, aman, dan mudah diakses tim dari mana saja.
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm font-semibold text-slate-700 mb-5">
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Setup akun email bisnis Microsoft 365 (@domainmu)</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Manajemen lisensi pengguna &amp; hak akses tim</li>
+              <li class="flex items-start gap-2"><span class="text-aiMint">✔</span> Integrasi OneDrive, SharePoint &amp; kolaborasi cloud</li>
+            </ul>
+          </div>
+          <div class="pt-3 border-t border-dashed border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-aiNavy bg-slate-100 px-3 py-1.5 rounded-xl">📦 Email &amp; Cloud Terkelola</span>
+            <button onclick="selectServiceAndScroll('Solusi Cloud & Microsoft 365')" class="text-xs font-extrabold text-aiBlue hover:underline">Pilih Layanan →</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MINI DEMO INTERAKTIF ================= -->
+  <section id="demo-interaktif" class="py-16 px-4 sm:px-6 bg-gradient-to-b from-blue-50/80 via-amber-50/50 to-transparent">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
+        <span class="inline-block bg-amber-200 text-aiNavy font-display font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full border-2 border-aiNavy">
+          🎮 Playground Interaktif A&amp;I
+        </span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-aiNavy">
+          Coba Sensasi Lucky Spin &amp; Simulasi Patok Peta!
+        </h2>
+        <p class="text-slate-600 font-medium text-sm sm:text-base">
+          Jangan cuma dibaca—cobain langsung contoh hasil kerja interaktif kami di bawah ini!
+        </p>
+      </div>
+
+      <!-- Tab Switcher Lucu -->
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <button id="tab-btn-spin" onclick="switchDemoTab('spin')" class="btn-bouncy font-display font-bold text-sm sm:text-base px-5 py-3 rounded-2xl border-2 border-aiNavy bg-aiGold text-aiNavy shadow-btn-gold flex items-center gap-2">
+          <span>🎡 Simulasi QR Lucky Spin</span>
+        </button>
+        <button id="tab-btn-peta" onclick="switchDemoTab('peta')" class="btn-bouncy font-display font-bold text-sm sm:text-base px-5 py-3 rounded-2xl border-2 border-aiNavy bg-white text-aiNavy shadow-pop flex items-center gap-2">
+          <span>📍 Simulasi Patok Peta OSS (.shp)</span>
+        </button>
+      </div>
+
+      <!-- PANEL 1: LUCKY SPIN INTERAKTIF -->
+      <div id="demo-panel-spin" class="bg-white border-4 border-aiNavy rounded-[32px] p-6 sm:p-8 shadow-pop">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <!-- Roda Putar SVG -->
+          <div class="md:col-span-6 flex flex-col items-center relative">
+            <!-- Jarum Penunjuk Atas -->
+            <div class="z-10 -mb-4">
+              <div class="w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-t-[26px] border-t-aiCoral drop-shadow"></div>
+            </div>
+
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72">
+              <svg id="lucky-wheel-svg" viewBox="0 0 200 200" class="w-full h-full drop-shadow-md transition-transform duration-[3200ms] ease-[cubic-bezier(0.17,0.89,0.22,1)]">
+                <circle cx="100" cy="100" r="96" fill="#0F294A" />
+                <!-- 6 Segmen Warna Ceria (masing-masing 60 derajat) -->
+                <path d="M100,100 L100,8 A92,92 0 0,1 179.67,54 Z" fill="#F59E0B" />
+                <path d="M100,100 L179.67,54 A92,92 0 0,1 179.67,146 Z" fill="#38BDF8" />
+                <path d="M100,100 L179.67,146 A92,92 0 0,1 100,192 Z" fill="#10B981" />
+                <path d="M100,100 L100,192 A92,92 0 0,1 20.33,146 Z" fill="#FB7185" />
+                <path d="M100,100 L20.33,146 A92,92 0 0,1 20.33,54 Z" fill="#A78BFA" />
+                <path d="M100,100 L20.33,54 A92,92 0 0,1 100,8 Z" fill="#FBBF24" />
+
+                <!-- Label Segmen -->
+                <g font-family="sans-serif" font-weight="800" font-size="9" fill="#0F294A" text-anchor="middle">
+                  <text x="132" y="45" transform="rotate(30 132 45)">DISKON 15%</text>
+                  <text x="162" y="103" transform="rotate(90 162 103)">FREE QR GMAPS</text>
+                  <text x="132" y="160" transform="rotate(150 132 160)">AUDIT WEB GRATIS</text>
+                  <text x="68" y="160" transform="rotate(210 68 160)">VOUCHER KOPI</text>
+                  <text x="38" y="103" transform="rotate(270 38 103)">BONUS REVISI</text>
+                  <text x="68" y="45" transform="rotate(330 68 45)">KONSULTASI VIP</text>
+                </g>
+
+                <!-- Lingkaran Tengah Logo A&I -->
+                <circle cx="100" cy="100" r="24" fill="#0F294A" stroke="#F59E0B" stroke-width="3" />
+                <text x="100" y="106" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="15" fill="#FFFFFF">A&amp;I</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Kontrol & Hasil Spin -->
+          <div class="md:col-span-6 space-y-4 text-center md:text-left">
+            <span class="inline-block bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full">
+              Contoh Sistem QR Promo Pelanggan
+            </span>
+            <h3 class="font-display font-bold text-2xl text-aiNavy">
+              Putar Roda Keberuntungan!
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Beginilah tampilan seru yang dilihat pelanggan bisnismu setelah men-scan <strong>QR Barcode Lucky Spin</strong> buatan A&amp;I. Bisa dikustomisasi dengan hadiah, logo brand, dan syarat ulasan Google Maps!
+            </p>
+
+            <div id="spin-result-box" class="bg-slate-50 border-2 border-dashed border-aiNavy/30 rounded-2xl p-4">
+              <p id="spin-result-text" class="font-display font-semibold text-base text-aiNavy">
+                🎁 Klik tombol di bawah untuk menguji putaran hadiah!
+              </p>
+            </div>
+
+            <button id="btn-spin-now" onclick="spinTheWheel()" class="btn-bouncy w-full sm:w-auto bg-aiCoral hover:bg-rose-400 text-white font-display font-bold text-base px-7 py-3.5 rounded-2xl border-2 border-aiNavy shadow-btn-3d">
+              🎰 Putar Sekarang!
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2: SIMULASI PATOK PETA OSS (.SHP) -->
+      <div id="demo-panel-peta" class="hidden bg-white border-4 border-aiNavy rounded-[32px] p-6 sm:p-8 shadow-pop">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <!-- Kanvas Peta Satelit Interaktif -->
+          <div class="md:col-span-7">
+            <div class="relative bg-emerald-950 rounded-3xl border-3 border-aiNavy p-3 overflow-hidden shadow-inner">
+              <div class="flex items-center justify-between text-[11px] font-bold text-emerald-200 px-2 pb-2">
+                <span>🛰️ Google Earth Ploting Preview</span>
+                <span class="bg-emerald-800 px-2.5 py-0.5 rounded-full text-amber-300">Format: bidang_oss.shp</span>
+              </div>
+
+              <svg viewBox="0 0 360 230" class="w-full h-auto rounded-2xl bg-[#073B2E]">
+                <!-- Kontur & Jalan Simulasi -->
+                <path d="M 0 195 Q 180 175 360 205" stroke="#475569" stroke-width="14" fill="none" />
+                <path d="M 0 195 Q 180 175 360 205" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="8 8" fill="none" />
+                <text x="275" y="198" fill="#E2E8F0" font-size="8" font-family="sans-serif" font-weight="bold">JALAN AKSES UTAMA</text>
+
+                <!-- Grid Koordinat -->
+                <path d="M0 45 H360 M0 90 H360 M0 135 H360 M72 0 V230 M144 0 V230 M216 0 V230 M288 0 V230" stroke="#10B981" stroke-opacity="0.16" stroke-width="1" />
+
+                <!-- Poligon Lahan -->
+                <polygon id="oss-polygon" points="75,45 265,38 292,152 95,162 56,102" fill="#10B981" fill-opacity="0.28" stroke="#FBBF24" stroke-width="3" class="boundary-line" />
+
+                <!-- Label Sisi Garis -->
+                <text x="170" y="32" fill="#FDE68A" font-size="9" text-anchor="middle" font-weight="bold">Sisi Utara: 48.5 m</text>
+                <text x="294" y="96" fill="#FDE68A" font-size="9" text-anchor="start" font-weight="bold">32.0 m</text>
+                <text x="192" y="173" fill="#FDE68A" font-size="9" text-anchor="middle" font-weight="bold">Sisi Selatan: 51.2 m</text>
+
+                <!-- Info Tengah Poligon -->
+                <rect x="122" y="82" width="110" height="36" rx="8" fill="#0F294A" fill-opacity="0.88" stroke="#34D399" stroke-width="1.5" />
+                <text x="177" y="97" fill="#FFFFFF" font-size="9" text-anchor="middle" font-weight="bold">LUAS: ± 1.640 m²</text>
+                <text x="177" y="110" fill="#6EE7B7" font-size="8" text-anchor="middle">5 Titik Patok Sudut</text>
+
+                <!-- 5 Titik Patok yang Bisa Diklik -->
+                <g class="cursor-pointer" onclick="inspectPatok(1, '-6.234812, 106.982140', 'Sudut Barat Laut (Patok P-01)')">
+                  <circle cx="75" cy="45" r="11" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="75" cy="45" r="7" fill="#FBBF24" stroke="#0F294A" stroke-width="2" />
+                  <text x="75" y="48" font-size="8" font-weight="bold" text-anchor="middle" fill="#0F294A">1</text>
+                </g>
+
+                <g class="cursor-pointer" onclick="inspectPatok(2, '-6.234795, 106.982580', 'Sudut Timur Laut (Patok P-02)')">
+                  <circle cx="265" cy="38" r="11" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="265" cy="38" r="7" fill="#FBBF24" stroke="#0F294A" stroke-width="2" />
+                  <text x="265" y="41" font-size="8" font-weight="bold" text-anchor="middle" fill="#0F294A">2</text>
+                </g>
+
+                <g class="cursor-pointer" onclick="inspectPatok(3, '-6.235088, 106.982645', 'Sudut Tenggara (Patok P-03)')">
+                  <circle cx="292" cy="152" r="11" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="292" cy="152" r="7" fill="#FBBF24" stroke="#0F294A" stroke-width="2" />
+                  <text x="292" y="155" font-size="8" font-weight="bold" text-anchor="middle" fill="#0F294A">3</text>
+                </g>
+
+                <g class="cursor-pointer" onclick="inspectPatok(4, '-6.235115, 106.982190', 'Sudut Barat Daya (Patok P-04)')">
+                  <circle cx="95" cy="162" r="11" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="95" cy="162" r="7" fill="#FBBF24" stroke="#0F294A" stroke-width="2" />
+                  <text x="95" y="165" font-size="8" font-weight="bold" text-anchor="middle" fill="#0F294A">4</text>
+                </g>
+
+                <g class="cursor-pointer" onclick="inspectPatok(5, '-6.234950, 106.982095', 'Belokan Batas Barat (Patok P-05)')">
+                  <circle cx="56" cy="102" r="11" fill="#F59E0B" class="patok-pulse" />
+                  <circle cx="56" cy="102" r="7" fill="#FBBF24" stroke="#0F294A" stroke-width="2" />
+                  <text x="56" y="105" font-size="8" font-weight="bold" text-anchor="middle" fill="#0F294A">5</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Detail Pembacaan Patok -->
+          <div class="md:col-span-5 space-y-4">
+            <span class="inline-block bg-emerald-100 text-emerald-900 font-bold text-xs px-3 py-1 rounded-full">
+              Klik Angka Patok 1–5 di Peta!
+            </span>
+            <h3 class="font-display font-bold text-2xl text-aiNavy">
+              Setiap Sudut Garis Terpasang Patok Jelas
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Kami menandai setiap titik belokan batas lahan pada citra Google Earth agar garis poligon presisi, lalu mengekspornya ke berkas <strong>Shapefile (.shp)</strong> sesuai standar sistem OSS.
+            </p>
+
+            <div id="patok-info-box" class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-4 space-y-1">
+              <p class="text-xs font-extrabold uppercase text-emerald-800" id="patok-title">📍 Patok P-01 — Sudut Barat Laut</p>
+              <p class="font-mono text-sm font-bold text-aiNavy" id="patok-coord">Koordinat: -6.234812, 106.982140</p>
+              <p class="text-xs text-slate-600">Status: Terverifikasi &amp; siap ekspor ke <code>.shp / .shx / .dbf / .prj</code></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ALUR KERJA (4 LANGKAH MUDAH) ================= -->
+  <section id="alur-kerja" class="py-16 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <span class="inline-block bg-emerald-100 text-aiNavy font-display font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full border-2 border-aiNavy/20">
+          🗺️ anti ribet-ribet club
+        </span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-aiNavy">
+          4 Langkah Santai Sampai Proyek Beres
+        </h2>
+      </div>
+
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Garis Penghubung Desktop -->
+        <div class="hidden lg:block absolute top-14 left-12 right-12 h-1.5 border-t-4 border-dashed border-amber-400 -z-10"></div>
+
+        <!-- Step 1 -->
+        <div class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 text-center shadow-pop">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-amber-300 border-3 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+            ☕
+          </div>
+          <span class="inline-block bg-aiNavy text-white font-display font-bold text-xs px-3 py-0.5 rounded-full mb-2">Langkah 1</span>
+          <h3 class="font-display font-bold text-lg text-aiNavy mb-1.5">Diskusi Santai</h3>
+          <p class="text-xs sm:text-sm text-slate-600">Ceritakan kebutuhanmu—mau bikin web, QR spin, Cloud 365, atau ukur lahan OSS.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 text-center shadow-pop">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-sky-300 border-3 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+            🛠️
+          </div>
+          <span class="inline-block bg-aiNavy text-white font-display font-bold text-xs px-3 py-0.5 rounded-full mb-2">Langkah 2</span>
+          <h3 class="font-display font-bold text-lg text-aiNavy mb-1.5">Rancang &amp; Eksekusi</h3>
+          <p class="text-xs sm:text-sm text-slate-600">Tim A&amp;I langsung eksekusi koding, konfigurasi akun, QR, atau ploting patok di Google Earth.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 text-center shadow-pop">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-rose-300 border-3 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+            🔍
+          </div>
+          <span class="inline-block bg-aiNavy text-white font-display font-bold text-xs px-3 py-0.5 rounded-full mb-2">Langkah 3</span>
+          <h3 class="font-display font-bold text-lg text-aiNavy mb-1.5">Cek &amp; Revisi</h3>
+          <p class="text-xs sm:text-sm text-slate-600">Kamu cek preview hasilnya. Ada detail yang ingin disesuaikan? Kami rapikan sampai pas!</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="card-bouncy bg-white border-3 border-aiNavy rounded-[28px] p-6 text-center shadow-pop">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-emerald-300 border-3 border-aiNavy flex items-center justify-center text-3xl shadow-sm">
+            🎉
+          </div>
+          <span class="inline-block bg-aiNavy text-white font-display font-bold text-xs px-3 py-0.5 rounded-full mb-2">Langkah 4</span>
+          <h3 class="font-display font-bold text-lg text-aiNavy mb-1.5">Siap Pakai!</h3>
+          <p class="text-xs sm:text-sm text-slate-600">Serah terima seluruh file final, akses website/cloud, QR siap cetak, atau paket file <code>.shp</code>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KENAPA MEMILIH A&I ================= -->
+  <section id="keunggulan" class="py-12 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto bg-aiNavy text-white rounded-[36px] p-7 sm:p-12 border-4 border-aiGold shadow-pop relative overflow-hidden">
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-3">
+          <span class="inline-block bg-aiGold text-aiNavy font-display font-bold text-xs px-3.5 py-1 rounded-full">
+            ⭐ Kenapa Partner Memilih A&amp;I?
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl leading-tight">
+            Kombinasi Langka: Ngerti IT, Cloud, Marketing QR &amp; Peta OSS!
+          </h2>
+          <p class="text-blue-100 text-sm sm:text-base leading-relaxed">
+            Tidak perlu repot koordinasi ke banyak vendor berbeda. Di A&amp;I, kebutuhan digital hingga kelengkapan teknis lahan ditangani satu tim yang komunikatif.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+            <div class="text-2xl mb-1.5">🗣️</div>
+            <h3 class="font-display font-bold text-lg text-amber-300">Bahasa Manusia, Anti Ribet</h3>
+            <p class="text-xs sm:text-sm text-blue-100 mt-1">Istilah teknis kami jelaskan secara sederhana sehingga kamu selalu paham progres proyekmu.</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+            <div class="text-2xl mb-1.5">🎯</div>
+            <h3 class="font-display font-bold text-lg text-emerald-300">Presisi &amp; Siap Pakai</h3>
+            <p class="text-xs sm:text-sm text-blue-100 mt-1">Setiap patok batas lahan, tautan QR, hingga konfigurasi Microsoft 365 diuji sebelum diserahkan.</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+            <div class="text-2xl mb-1.5">⚡</div>
+            <h3 class="font-display font-bold text-lg text-sky-300">Fleksibel &amp; Responsif</h3>
+            <p class="text-xs sm:text-sm text-blue-100 mt-1">Bisa bangun dari nol maupun lanjutkan/revisi sistem atau website lama yang sudah berjalan.</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+            <div class="text-2xl mb-1.5">🤝</div>
+            <h3 class="font-display font-bold text-lg text-rose-300">Melayani Seluruh Indonesia</h3>
+            <p class="text-xs sm:text-sm text-blue-100 mt-1">Dukungan penuh secara daring (remote) yang cepat maupun koordinasi langsung sesuai kebutuhan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KONTAK & GENERATOR PESAN WHATSAPP ================= -->
+  <section id="kontak" class="py-16 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto bg-white border-4 border-aiNavy rounded-[36px] p-6 sm:p-10 shadow-pop">
+      <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
+        <span class="inline-block bg-emerald-100 text-emerald-900 font-display font-bold text-xs px-4 py-1.5 rounded-full border-2 border-aiNavy">
+          💬 Mulai Obrolan Cepat
+        </span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-aiNavy">
+          Yuk, Diskusikan Kebutuhanmu!
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 font-medium">
+          Isi formulir singkat di bawah ini, sistem akan otomatis menyusun pesan rapi untuk langsung dikirim ke WhatsApp tim <strong>A&amp;I</strong>.
+        </p>
+      </div>
+
+      <form id="wa-contact-form" onsubmit="sendToWhatsApp(event)" class="space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="client-name" class="block font-display font-bold text-sm text-aiNavy mb-1.5">
+              Nama Kamu / Nama Usaha
+            </label>
+            <input type="text" id="client-name" required value="Budi Santoso" class="w-full px-4 py-3 rounded-2xl border-2 border-aiNavy/25 focus:border-aiBlue focus:outline-none font-semibold text-slate-800 bg-slate-50" />
+          </div>
+
+          <div>
+            <label for="service-select" class="block font-display font-bold text-sm text-aiNavy mb-1.5">
+              Layanan yang Dibutuhkan
+            </label>
+            <select id="service-select" class="w-full px-4 py-3 rounded-2xl border-2 border-aiNavy/25 focus:border-aiBlue focus:outline-none font-semibold text-slate-800 bg-slate-50">
+              <option value="Konsultansi Teknis & Alur Kerja">🧠 Konsultansi Teknis &amp; Alur Kerja</option>
+              <option value="Jasa Website (Baru / Revamp / Revisi)">💻 Jasa Website (Bangun Awal / Ulang / Revisi)</option>
+              <option value="QR Lucky Spin, Ulasan & Google Maps">🎡 QR / Barcode Lucky Spin, Ulasan &amp; GMaps</option>
+              <option value="Ukur Tanah & Peta Batas Lahan OSS (.shp)" selected>📍 Ukur Tanah &amp; Peta Batas Lahan OSS (.shp)</option>
+              <option value="Solusi Cloud & Microsoft 365">☁️ Solusi Cloud &amp; Microsoft 365</option>
+              <option value="Paket Gabungan Beberapa Layanan">🚀 Paket Gabungan Beberapa Layanan</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="client-notes" class="block font-display font-bold text-sm text-aiNavy mb-1.5">
+            Ceritakan Singkat Kebutuhan Proyekmu
+          </label>
+          <textarea id="client-notes" rows="3" required class="w-full px-4 py-3 rounded-2xl border-2 border-aiNavy/25 focus:border-aiBlue focus:outline-none font-medium text-slate-800 bg-slate-50">Halo tim A&amp;I! Saya ingin konsultasi terkait pembuatan peta batas lahan berpatok format .shp untuk kebutuhan OSS serta rencana pembuatan website usaha.</textarea>
+        </div>
+
+        <!-- Status Box Pengganti Alert -->
+        <div id="form-feedback" class="hidden bg-emerald-50 border-2 border-emerald-400 text-emerald-900 rounded-2xl p-4 text-sm font-semibold"></div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+          <div class="text-xs font-semibold text-slate-500 text-center sm:text-left">
+            ⚡ Respon cepat di jam kerja • Konsultasi awal gratis tanpa komitmen
+          </div>
+          <button type="submit" class="btn-bouncy w-full sm:w-auto bg-aiMint hover:bg-emerald-400 text-aiNavy font-display font-bold text-base sm:text-lg px-8 py-4 rounded-2xl border-2 border-aiNavy shadow-btn-3d flex items-center justify-center gap-2.5">
+            <span>Kirim ke WhatsApp</span>
+            <span class="text-xl">📲</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-aiNavy text-white pt-10 pb-8 px-4 sm:px-6 border-t-4 border-aiGold">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="logo-ai-emblem w-10 h-10 rounded-xl flex items-center justify-center">
+          <span class="logo-ai-text font-bold text-lg tracking-tighter">A&amp;I</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-base text-white">A&amp;I Consulting &amp; Digital Solutions</p>
+          <p class="text-xs text-blue-200">Web Engineering • Smart QR • Cloud &amp; M365 • Peta Patok OSS (.shp)</p>
+        </div>
+      </div>
+
+      <p class="text-xs sm:text-sm text-blue-200 font-medium text-center sm:text-right">
+        &copy; 2026 A&amp;I Consulting &amp; Digital Solutions. Hak Cipta Dilindungi.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT INTERAKTIF ================= -->
+  <script>
+    // =========================================================================
+    // KONFIGURASI NOMOR WHATSAPP (Ubah satu variabel ini dengan nomor WA Anda)
+    // Gunakan format internasional tanpa tanda '+' atau spasi (contoh: 6281234567890)
+    // =========================================================================
+    const WHATSAPP_NUMBER = "6281234567890";
+
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+    document.querySelectorAll(".mobile-link").forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    // 2. Maskot Interaktif: Mata mengikuti kursor & merespons saat diklik
+    const mascotEyes = document.getElementById("mascot-eyes");
+    const mascotSpeech = document.getElementById("mascot-speech");
+    const mascotQuotes = [
+      "\"Mau website baru atau revamp? Gaskeun! 💻\"",
+      "\"Butuh file .shp dengan patok tiap sudut buat OSS? Beres! 📍\"",
+      "\"QR Lucky Spin & ulasan GMaps bikin toko makin rame! 🎡\"",
+      "\"Email bisnis Microsoft 365 & Cloud siap kami rapikan! ☁️\"",
+      "\"Yuk ngobrol santai dulu, gratis kok! ☕\""
+    ];
+    let quoteIndex = 0;
+
+    document.addEventListener("mousemove", (e) => {
+      if (!mascotEyes) return;
+      const xRatio = (e.clientX / window.innerWidth - 0.5) * 8;
+      const yRatio = (e.clientY / window.innerHeight - 0.5) * 6;
+      mascotEyes.style.transform = `translate(${xRatio.toFixed(1)}px, ${yRatio.toFixed(1)}px)`;
+    });
+
+    function pokeMascot(event) {
+      fireConfetti(event);
+      quoteIndex = (quoteIndex + 1) % mascotQuotes.length;
+      mascotSpeech.innerHTML = `<p class="font-display font-semibold text-sm sm:text-base text-aiNavy">${mascotQuotes[quoteIndex]}</p>`;
+      mascotSpeech.classList.add("scale-105", "bg-amber-50");
+      setTimeout(() => {
+        mascotSpeech.classList.remove("scale-105", "bg-amber-50");
+      }, 280);
+    }
+
+    // 3. Tab Switcher Mini Demo (Lucky Spin vs Patok Peta OSS)
+    function switchDemoTab(tabName) {
+      const spinPanel = document.getElementById("demo-panel-spin");
+      const petaPanel = document.getElementById("demo-panel-peta");
+      const btnSpin = document.getElementById("tab-btn-spin");
+      const btnPeta = document.getElementById("tab-btn-peta");
+
+      if (tabName === "spin") {
+        spinPanel.classList.remove("hidden");
+        petaPanel.classList.add("hidden");
+        btnSpin.className = "btn-bouncy font-display font-bold text-sm sm:text-base px-5 py-3 rounded-2xl border-2 border-aiNavy bg-aiGold text-aiNavy shadow-btn-gold flex items-center gap-2";
+        btnPeta.className = "btn-bouncy font-display font-bold text-sm sm:text-base px-5 py-3 rounded-2xl border-2 border-aiNavy bg-white text-aiNavy shadow-pop flex items-center gap-2";
+      } else {
+        petaPanel.classList.remove("hidden");
+        spinPanel.classList.add("hidden");
+        btnPeta.className = "btn-bouncy font-display font-bold text-sm sm:text-base px-5 py-3 rounded-2xl border-2 border-aiNavy bg-aiMint text-aiNavy shadow-btn-3d flex items-center gap-2";
+        btnSpin.className = "btn-bouncy font-display font-bold text-sm sm:text-base px-5 py-3 rounded-2xl border-2 border-aiNavy bg-white text-aiNavy shadow-pop flex items-center gap-2";
+      }
+    }
+
+    // 4. Logika Simulasi Lucky Spin
+    let currentRotation = 0;
+    let isSpinning = false;
+    const wheelPrizes = [
+      "Konsultasi VIP Gratis 30 Menit!",
+      "Bonus Revisi Tambahan Website!",
+      "Voucher Kopi Santai Diskusi!",
+      "Audit Kecepatan Website Gratis!",
+      "Gratis Setup QR Google Maps!",
+      "Diskon Spesial 15% Paket Proyek!"
+    ];
+
+    function spinTheWheel() {
+      if (isSpinning) return;
+      isSpinning = true;
+
+      const wheel = document.getElementById("lucky-wheel-svg");
+      const resultText = document.getElementById("spin-result-text");
+      const btnSpin = document.getElementById("btn-spin-now");
+
+      btnSpin.disabled = true;
+      btnSpin.classList.add("opacity-60");
+      resultText.textContent = "⏳ Roda berputar... semoga dapat hadiah seru!";
+
+      const extraSpins = 1440 + Math.floor(Math.random() * 360);
+      currentRotation += extraSpins;
+      wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+      setTimeout(() => {
+        const normalizedDeg = currentRotation % 360;
+        const prizeIndex = Math.floor(normalizedDeg / 60) % wheelPrizes.length;
+        resultText.innerHTML = `🎉 Selamat! Kamu dapat: <span class="text-aiBlue underline">${wheelPrizes[prizeIndex]}</span>`;
+        fireConfetti();
+        isSpinning = false;
+        btnSpin.disabled = false;
+        btnSpin.classList.remove("opacity-60");
+      }, 3250);
+    }
+
+    // 5. Logika Klik Titik Patok Peta OSS
+    function inspectPatok(nomor, koordinat, label) {
+      const box = document.getElementById("patok-info-box");
+      document.getElementById("patok-title").textContent = `📍 Patok P-0${nomor} — ${label}`;
+      document.getElementById("patok-coord").textContent = `Koordinat: ${koordinat}`;
+      box.classList.add("scale-[1.02]", "bg-amber-50", "border-amber-400");
+      setTimeout(() => {
+        box.classList.remove("scale-[1.02]", "bg-amber-50", "border-amber-400");
+      }, 260);
+    }
+
+    // 6. Pilih Layanan dari Kartu -> Otomatis Scroll & Set Dropdown Form
+    function selectServiceAndScroll(serviceName) {
+      const selectEl = document.getElementById("service-select");
+      for (let i = 0; i < selectEl.options.length; i++) {
+        if (selectEl.options[i].value === serviceName) {
+          selectEl.selectedIndex = i;
+          break;
+        }
+      }
+      document.getElementById("kontak").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // 7. Kirim Form ke WhatsApp (Tanpa alert())
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById("client-name").value.trim();
+      const service = document.getElementById("service-select").value;
+      const notes = document.getElementById("client-notes").value.trim();
+      const feedback = document.getElementById("form-feedback");
+
+      const message =
+        `Halo Tim A&I! 👋\n\n` +
+        `Perkenalkan saya *${name}*.\n` +
+        `Saya tertarik dengan layanan: *${service}*\n\n` +
+        `Detail kebutuhan:\n${notes}\n\n` +
+        `Mohon info lanjutannya ya. Terima kasih!`;
+
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+      feedback.classList.remove("hidden");
+      feedback.innerHTML = `✅ Pesan siap! Membuka WhatsApp untuk <strong>${name}</strong>... Jika tab baru tidak terbuka otomatis, <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="underline font-bold text-aiBlue">klik tautan ini</a>.`;
+
+      fireConfetti(event);
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    }
+
+    // 8. Efek Confetti Lucu Ringan (Canvas 2D)
+    const canvas = document.getElementById("confetti-canvas");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let animRunning = false;
+
+    function resizeConfettiCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeConfettiCanvas);
+    resizeConfettiCanvas();
+
+    function fireConfetti(e) {
+      const originX = e && e.clientX ? e.clientX : window.innerWidth / 2;
+      const originY = e && e.clientY ? e.clientY : window.innerHeight / 2;
+      const colors = ["#0F294A", "#F59E0B", "#10B981", "#38BDF8", "#FB7185"];
+
+      for (let i = 0; i < 42; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 3 + Math.random() * 6;
+        particles.push({
+          x: originX,
+          y: originY,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 3,
+          size: 6 + Math.random() * 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 12,
+          life: 65 + Math.random() * 25
+        });
+      }
+
+      if (!animRunning) {
+        animRunning = true;
+        requestAnimationFrame(renderConfetti);
+      }
+    }
+
+    function renderConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.22; // gravitasi lembut
+        p.rotation += p.rotSpeed;
+        p.life -= 1;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.65);
+        ctx.restore();
+      });
+
+      particles = particles.filter((p) => p.life > 0);
+      if (particles.length > 0) {
+        requestAnimationFrame(renderConfetti);
+      } else {
+        animRunning = false;
+      }
+    }
+  </script>
+</body>
+</html>
